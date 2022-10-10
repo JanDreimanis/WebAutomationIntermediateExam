@@ -12,7 +12,7 @@ import utilities.ExtentTestManager;
 
 public class MyListener implements ITestListener {
 
-    public String methodName;
+ String methodName;
 
 
 
@@ -28,14 +28,13 @@ public class MyListener implements ITestListener {
         String [] groups = result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(Test.class).groups();
 
 
-
         System.out.println("STARTED TEST: " + methodName + " - " + testDescription);
-        for(String groupName : groups){
+        for (String groupName : groups) {
             System.out.println("TEST GROUP: " + groupName);
         }
 
         ExtentTestManager.startTest(methodName + " - " + testDescription, "Exam");
-        for(String groupName : groups){
+        for (String groupName : groups) {
             ExtentTestManager.getTest().assignCategory(groupName);
         }
         ExtentTestManager.getTest().assignAuthor(TestBase.configReader.getAuthor());
@@ -66,4 +65,5 @@ public class MyListener implements ITestListener {
         System.out.println("This is end of my test execution");
         ExtentTestManager.createReport();
     }
+
 }

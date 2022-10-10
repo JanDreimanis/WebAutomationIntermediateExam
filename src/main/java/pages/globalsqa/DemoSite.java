@@ -10,6 +10,7 @@ import org.testng.Reporter;
 import page.objects.Button;
 import page.objects.TextField;
 import pages.BasePage;
+import utilities.ExtentTestManager;
 import utilities.Locator;
 
 public class DemoSite extends BasePage {
@@ -27,6 +28,7 @@ public class DemoSite extends BasePage {
         Thread.sleep(2000);
         JavascriptExecutor executor = (JavascriptExecutor)TestBase.getDriver();
         executor.executeScript("arguments[0].click();", autoCompleteButton);
+        ExtentTestManager.logInfo("Clicked on auto complete button");
     }
 
 

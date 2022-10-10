@@ -17,10 +17,12 @@ public class AutomationPracticePages {
     }
 
     public static void initialiseWomenPage() {
-        womenPage.set(new WomenPage("Women page", new Locator(Locator.LocatorType.CLASS, "category category-3 category-women hide-right-column lang_en")));
+        womenPage.set(new WomenPage("Women page",
+                new Locator(Locator.LocatorType.CLASS, "category category-3 category-women hide-right-column lang_en")));
     }
 
     public static void initialiseDressesPage() {
-        dressesPage.set(new DressesPage("Dresses page", new Locator(Locator.LocatorType.CLASS, "category category-8 category-dresses hide-right-column lang_en")));
+        dressesPage.set(new DressesPage("Dresses page",
+                new Locator(Locator.LocatorType.CLASS, "category category-8 category-dresses hide-right-column lang_en")));
     }
 }

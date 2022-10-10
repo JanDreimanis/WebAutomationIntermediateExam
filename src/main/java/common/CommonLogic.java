@@ -9,20 +9,26 @@ import static common.TestBase.getDriver;
 public class CommonLogic {
 
 
-    public static void validationPass(String message){
+    public static void validationPass(String message) {
         ExtentTestManager.logInfo(Status.PASS, message);
         System.out.println(message);
     }
-    public static void validationFail(String message){
+
+    public static void validationFail(String message) {
         validationFail(message, false);
     }
-    public static void validationFail(String message, boolean stopTest){
+
+    public static void validationFail(String message, boolean stopTest) {
         System.out.println(message);
         ExtentTestManager.logInfo(Status.FAIL, message);
         logScreenshot();
-        if(stopTest){
+        if (stopTest) {
             throw new RuntimeException(message);
         }
+    }
+
+    public static void logInfo(String message) {
+        System.out.println(message);
     }
 
     public static void chooseUrl(String test) {
@@ -41,15 +47,15 @@ public class CommonLogic {
                 openUrl(configReader.getGlobalSqaDemoSiteUrl());
         }
     }
-    public static void logScreenshot(){
+
+    public static void logScreenshot() {
         ExtentTestManager.logScreenShot("Screenshot");
     }
-    public static void openUrl(String url){
+
+    public static void openUrl(String url) {
         getDriver().get(url);
         getDriver().manage().window().maximize();
     }
-
-
 
 
 }

@@ -39,7 +39,7 @@ public class WomenPage extends BasePage {
         }
         for (String product : productList
              ) {
-            ExtentTestManager.logInfo("Product " + counter + " : " + product);
+            ExtentTestManager.logInfo("Logged product " + counter + " : " + product);
             counter++;
         }
     }
