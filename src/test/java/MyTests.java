@@ -69,7 +69,7 @@ public class MyTests extends SamplePageTestDataProvider {
         GlobalSqaPages.initializeDemoSitePage();
         DemoSite.clickAutoCompleteButton();
         GlobalSqaPages.initializeAutoCompletePage();
-        AutoCompletePage.inputText();
-        AutoCompletePage.selectValueInSortingField();
+        AutoCompletePage.inputText("and");
+        AutoCompletePage.selectValue();
     }
 }

@@ -1,5 +1,7 @@
 package common;
 
+import utilities.ExtentTestManager;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,7 +31,7 @@ public class ConfigFileReader {
                 ex.printStackTrace();
             }
         } catch (FileNotFoundException exception) {
-            exception.printStackTrace();
+            ExtentTestManager.logInfo("File not found.");
         }
         return properties1;
     }

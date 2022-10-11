@@ -13,7 +13,7 @@ public class DressesPage extends BasePage {
     }
 
     public static void selectValueInSortingField(String value) {
-        Select sorting = new Select(TestBase.getDriver().findElement(By.id("selectProductSort"))); //Safe for nullpointer
+        Select sorting = new Select(TestBase.getDriver().findElement(By.id("selectProductSort")));
         sorting.selectByVisibleText(value);
         ExtentTestManager.logInfo("Selected " + value);
     }

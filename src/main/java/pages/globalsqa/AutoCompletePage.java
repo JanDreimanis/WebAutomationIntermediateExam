@@ -3,6 +3,7 @@ package pages.globalsqa;
 import common.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import page.objects.TextField;
 import pages.BasePage;
 import utilities.ExtentTestManager;
@@ -16,15 +17,22 @@ public class AutoCompletePage extends BasePage {
     public static TextField searchField = new TextField(
             "Search field", new Locator(Locator.LocatorType.XPATH, "//input[@id='search']"));
 
-    public static void inputText() {
-        WebElement iframe = TestBase.getDriver().findElementByXPath("//*[@id=\"post-2656\"]/div[2]/div/div/div[1]/p/iframe");
+    public static void inputText(String text) {
+        WebElement iframe = TestBase.getElement(new Locator(Locator.LocatorType.XPATH,"//*[@id=\"post-2656\"]/div[2]/div/div/div[1]/p/iframe"));
         TestBase.getDriver().switchTo().frame(iframe);
-        searchField.textInput("and");
+        searchField.textInput(text);
     }
 
-    public static void selectValueInSortingField() {
-        WebElement sorting = TestBase.getDriver().findElement(By.xpath("//*[@id='ui-id-1']/li[4]/div")); //Safe for nullpointer
-        sorting.click();
-        ExtentTestManager.logInfo("selected " + sorting.getText());
+    public static void selectValue() {
+        WebElement sorting = TestBase.getElement(new Locator(Locator.LocatorType.XPATH,"//*[@id='ui-id-1']/li[4]/div"));
+        if (sorting != null) {
+            sorting.click();
+        }
+        ExtentTestManager.logInfo("Selected Anders andersson");  //Var labāk protams.
     }
+
+
+
+
 }
+

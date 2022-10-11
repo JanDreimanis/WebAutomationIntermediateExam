@@ -27,10 +27,6 @@ public class CommonLogic {
         }
     }
 
-    public static void logInfo(String message) {
-        System.out.println(message);
-    }
-
     public static void chooseUrl(String test) {
         switch (test) {
             case "test001":
