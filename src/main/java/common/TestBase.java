@@ -11,7 +11,7 @@ import utilities.Locator;
 
 public class TestBase {
 
-    public static ConfigfileReader configReader = new ConfigfileReader();
+    public static ConfigFileReader configReader = new ConfigFileReader();
 
     private static final ThreadLocal<RemoteWebDriver> driverRepository = new ThreadLocal<>();
     public static RemoteWebDriver getDriver() {

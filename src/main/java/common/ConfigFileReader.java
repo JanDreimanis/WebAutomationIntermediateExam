@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Properties;
 
-public class ConfigfileReader {
+public class ConfigFileReader {
 
     private final Properties properties = getProperties();
 
@@ -17,24 +17,24 @@ public class ConfigfileReader {
                     "configs" + File.separator +
                     "configuration.properties";
 
-    private Properties getProperties(){
+    private Properties getProperties() {
         Properties properties1 = new Properties();
         BufferedReader bufferedReader;
-        try{
+        try {
             bufferedReader = new BufferedReader(new FileReader(PATH));
-            try{
+            try {
                 properties1.load(bufferedReader);
                 bufferedReader.close();
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
-        }catch (FileNotFoundException exception){
+        } catch (FileNotFoundException exception) {
             exception.printStackTrace();
         }
         return properties1;
     }
 
-    private String getProperty(String key){
+    private String getProperty(String key) {
         return properties.getProperty(key);
     }
 
@@ -50,5 +50,7 @@ public class ConfigfileReader {
         return getProperty("globalSqa.demo.site.url");
     }
 
-    public String getAuthor() { return getProperty("author"); }
+    public String getAuthor() {
+        return getProperty("author");
+    }
 }

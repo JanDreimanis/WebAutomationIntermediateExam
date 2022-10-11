@@ -41,7 +41,7 @@ public class MyTests extends SamplePageTestDataProvider {
         AutomationPracticePages.initialiseAutomationPracticeHomePage();
         AutomationPracticeHomePage.dressesButton.click();
         AutomationPracticePages.initialiseDressesPage();
-        DressesPage.selectValueInSortingField( "Product Name: A to Z");
+        DressesPage.selectValueInSortingField("Product Name: A to Z");
         ExtentTestManager.logScreenShot("");
 
     }

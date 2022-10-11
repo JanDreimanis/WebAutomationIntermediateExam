@@ -17,5 +17,4 @@ public class AutomationPracticeHomePage extends BasePage {
             new Locator(Locator.LocatorType.XPATH, "//*[@id=\"block_top_menu\"]/ul/li[2]/a"));
 
 
-
 }
